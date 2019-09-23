@@ -19,6 +19,9 @@ def getKeywordsFromRoute(origin, destination):
     #Sends the request and reads the response.
     response = urllib.request.urlopen(request).read()
     
+    #Loads response as JSON
+    directions = json.loads(response)
+    
     #Word list that stores all the keywords assosicated with a route
     word_list = []
     
