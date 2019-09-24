@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 import re
 
 api_key ='Your API key'
-api_key = 'AIzaSyDdKHEi9ol4yd03Wly5ddGgNwQgDtctbr4'
 
 #This Function gets the keywords that are needed for the routes
 def getKeywordsFromRoute(origin, destination):
