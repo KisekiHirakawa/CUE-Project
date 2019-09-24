@@ -20,8 +20,8 @@ def getKeywordsFromRoute(origin, destination):
     
     # NOTE: Found that this API doesn't work well with origin/destination strings that have spaces in them
     # and so need to replace the spaces by a '+'
-    origin.replace(' ', '+')
-    destination.replace(' ', '+')
+    origin = origin.replace(' ', '+')
+    destination = destination.replace(' ', '+')
     
     #Google Maps Ddirections API endpoint
     endpoint = 'https://maps.googleapis.com/maps/api/directions/json?'
