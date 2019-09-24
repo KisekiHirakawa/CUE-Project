@@ -26,6 +26,21 @@ def isGeoEnabled(tweet):
         return False
     else:
         return True
+    
+def isPlaceEnabled(tweet):
+    """
+    This function checks if a tweet has the place parameter enabled. Place is different from geo in that it is something
+    
+    Parameters:
+        tweet (tweepy.models.Status): tweepy.models.Status object. Decided against something like tweet ID since that would involve calling an API again
+        
+    Output:
+        geo (bool): True or False
+    """
+    if tweet._json['place']==None:
+        return False
+    else:
+        return True
 
 if __name__ == "__main__":
     # This part of the code is just to try out the functions written before---
@@ -46,11 +61,12 @@ if __name__ == "__main__":
         
     # ----------------------------------------
     # A code snippet to get some tweets    
-    places = api.geo_search(query='Japan', granularity='country')
-    place_id = places[0].id
+    #places = api.geo_search(query='Japan', granularity='country')
+    #place_id = places[0].id
     
     tweets = tweepy.Cursor(api.search,
-                        q=['place:%s AND delay' % place_id],
+                        #q=['place:%s AND delay' % place_id],
+                        q='Elephant',
                         lang='en', 
                         tweet_mode='extended',
                         extended_entities=True).items(3)
